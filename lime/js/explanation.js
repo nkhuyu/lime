@@ -25,7 +25,7 @@ class Explanation {
       names = this.names;
     }
     let plot = new Barchart(svg, exp, true, names, colors, true, 10);
-    svg.style('height', plot.svg_height);
+    svg.style('height', plot.svg_height + 'px');
   }
   // exp has all ocurrences of words, with start index and weight:
   // exp = [('word', 132, -0.13), ('word3', 111, 1.3)
@@ -89,7 +89,6 @@ class Explanation {
     } : null;
   }
   applyAlpha(hex, alpha) {
-    console.log(alpha)
     let components = this.hexToRgb(hex);
     return 'rgba(' + components.r + "," + components.g + "," + components.b + "," + alpha.toFixed(3) + ")"
   }
